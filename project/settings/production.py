@@ -26,8 +26,8 @@ DATABASES = {
 
 # Storage
 
-DEFAULT_FILE_STORAGE = 'AzureMediaStorage'
-STATICFILES_STORAGE = 'AzureStaticStorage'
+DEFAULT_FILE_STORAGE = '.custom_azure.AzureMediaStorage'
+STATICFILES_STORAGE = '.custom_azure.AzureStaticStorage'
 
 STATIC_LOCATION = "static"
 MEDIA_LOCATION = "media"
