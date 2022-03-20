@@ -1,5 +1,6 @@
 import os
 from .base import *
+from azure.storage.blob import BlobServiceClient
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
