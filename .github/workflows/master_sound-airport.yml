@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'sound-airport'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_05525FF37E4A4C5082EE72596145D44D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3444AF26031B498285DA44DA30C052E2 }}
