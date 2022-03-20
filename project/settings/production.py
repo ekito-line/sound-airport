@@ -1,5 +1,6 @@
 import os
 from .base import *
+from .custom_azure import *
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
@@ -25,8 +26,8 @@ DATABASES = {
 
 # Storage
 
-DEFAULT_FILE_STORAGE = '.custom_azure.AzureMediaStorage'
-STATICFILES_STORAGE = '.custom_azure.AzureStaticStorage'
+DEFAULT_FILE_STORAGE = 'AzureMediaStorage'
+STATICFILES_STORAGE = 'AzureStaticStorage'
 
 STATIC_LOCATION = "static"
 MEDIA_LOCATION = "media"
