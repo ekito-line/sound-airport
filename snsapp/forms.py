@@ -10,5 +10,5 @@ class PostForm(forms.ModelForm):
         fields = (
             'icon',
             'title',
-            # 'sound',
+            'sound',
         )
