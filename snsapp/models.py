@@ -20,7 +20,7 @@ class User(AbstractUser):
 
 class Post(models.Model):
     creator = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+        settings.base.AUTH_USER_MODEL, on_delete=models.CASCADE)
     created_date = models.DateTimeField(default=timezone.now)
     icon = models.SlugField(choices=places)
     title = models.CharField(max_length=title_length, default='No Title')
