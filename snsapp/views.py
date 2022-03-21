@@ -5,4 +5,4 @@ from .models import Post, User
 
 
 def home(request):
-    return render(request, 'snsapp/home.html', {})
+    return render(request, 'snsapp/home.html')
