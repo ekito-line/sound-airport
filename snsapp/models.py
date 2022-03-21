@@ -24,7 +24,7 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     icon = models.SlugField(choices=places)
     title = models.CharField(max_length=title_length, default='No Title')
-    sound = models.FileField(upload_to='sounds')
+    sound = models.FileField(upload_to='sounds', default='')
 
     def publish(self):
         self.save()
