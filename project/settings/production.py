@@ -36,3 +36,24 @@ STORAGE_CUSTOM_DOMAIN = f'{STORAGE_ACCOUNT}.blob.core.windows.net'
 
 STATIC_URL = f'https://{STORAGE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
 MEDIA_URL = f'https://{STORAGE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
+
+# Auth0 settings
+
+SOCIAL_AUTH_TRAILING_SLASH = False  # Remove trailing slash from routes
+SOCIAL_AUTH_AUTH0_DOMAIN = os.environ['AUTH_DOMAIN']
+SOCIAL_AUTH_AUTH0_KEY = os.environ['AUTH_KEY']
+SOCIAL_AUTH_AUTH0_SECRET = os.environ['AUTH_SECRET']
+SOCIAL_AUTH_AUTH0_SCOPE = [
+    'openid',
+    'profile',
+    'email'
+]
+
+AUTHENTICATION_BACKENDS = {
+    'social_core.backends.auth0.Auth0OAuth2',
+    'django.contrib.auth.backends.ModelBackend'
+}
+
+LOGIN_URL = '/login/auth0'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
