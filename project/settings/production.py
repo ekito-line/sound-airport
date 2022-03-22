@@ -39,6 +39,8 @@ MEDIA_URL = f'https://{STORAGE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
 
 # Auth0 settings
 
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
+
 SOCIAL_AUTH_TRAILING_SLASH = False  # Remove trailing slash from routes
 SOCIAL_AUTH_AUTH0_DOMAIN = os.environ['AUTH_DOMAIN']
 SOCIAL_AUTH_AUTH0_KEY = os.environ['AUTH_KEY']
