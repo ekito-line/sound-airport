@@ -64,11 +64,53 @@ def follow(request, user_id):
         follow_target = follow_user
         follow = Follow(creator = creator, follow_target = follow_target)
         follow.save()
-        return redirect(to = '/main')
+        return redirect(to = '/followinglist')
 
-    return render(request, 'snsapp/main.html', params)
+    return render(request, 'snsapp/followinglist.html', params)
 
 def mypage(request):
+    #follow数を数える
+    follows = Follow.objects.all()
+    posts = Post.objects.all()
+    
+    #database上のcreatorが自分の数を数える→フォロー数
+    follow_list = []
+    for follow in follows:
+        if follow.creator == request.user:
+            follow_list.append(1)
+    follow_num = len(follow_list)
+
+    #database上のfollow_targetが自分の数を数える→フォロワー数
+    follower_list = []
+    for follower in follows:
+        if follower.follow_target == request.user:
+            follower_list.append(1)
+    follower_num = len(follower_list)
+
+    #自分が投稿者の投稿の数を数える
+    post_list = []
+    for post in posts:
+        if post.creator == request.user:
+            post_list.append(1)
+    post_num = len(post_list)
+
+    #自分の投稿だけに絞る
+    mypost = Post.objects.filter(creator = request.user)
+
+    #私はだれか
+    user_name = request.user
+
+    params = {
+        'user_name' : user_name,
+        'follow_num' : follow_num,
+        'follower_num' : follower_num,
+        'post_num' : post_num,
+        'mypost' : mypost,
+    }
+
+    return render(request, 'snsapp/mypage.html', params)
+
+def followinglist(request):
     #follow数を数える
     follows = Follow.objects.all()
     
@@ -82,16 +124,39 @@ def mypage(request):
     #database上のfollow_targetが自分の数を数える→フォロワー数
     follower_list = []
     for follower in follows:
-        if follow.follow_target == request.user:
+        if follower.follow_target == request.user:
             follower_list.append(1)
     follower_num = len(follower_list)
 
-    params = {
-        'follow_num' : follow_num,
-        'follower_num' : follower_num,
-    }
+    #私はだれか
+    user_name = request.user
 
-    return render(request, 'snsapp/mypage.html', params)
+    #自分がフォローしているユーザー
+    follow = Follow.objects.filter(creator = request.user)
+
+    #自分のフォロワー
+    follower = Follow.objects.filter(follow_target = request.user)
+
+
+    if request.method == 'POST':
+        if 'button_1' in request.POST:
+            # ボタン1がクリックされた場合の処理
+            params = {
+                'user_name' : user_name,
+                'follow_num' : follow_num,
+                'follower_num' : follower_num,
+                'follow' : follow,
+            }
+            return render(request, 'snsapp/followinglist.html', params)
+        elif 'button_2' in request.POST:
+            # ボタン2がクリックされた場合の処理
+            params = {
+                'user_name' : user_name,
+                'follow_num' : follow_num,
+                'follower_num' : follower_num,
+                'follower' : follower,
+            }
+            return render(request, 'snsapp/followinglist.html', params)
 
 
 #Likeするための関数
