@@ -1,0 +1,13 @@
+.button {
+    display      : inline-block;                 /* 角丸 */
+    //box-shadow   : 6px 6px 3px #666666;  /* 影の設定 */
+    cursor       : pointer;              /* カーソル形状 */
+    //transition   : .3s;                  /* なめらか変化 */
+  }
+  .button:hover {
+    box-shadow   : none;                 /* 影の設定 */
+    border-radius: 0;                    /* 角丸 */
+  }
+
+// htmlで以下を追記
+// <img src="button.png" class="button" alt="samplebutton">
