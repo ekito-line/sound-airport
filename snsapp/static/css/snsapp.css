@@ -76,14 +76,10 @@ h1 {
 }
 .button {
   display: inline-block;
-  /* 角丸 */
   cursor: pointer;
-  /* カーソル形状 */
 }
 
 .button:hover {
   box-shadow: none;
-  /* 影の設定 */
   border-radius: 0;
-  /* 角丸 */
 }
