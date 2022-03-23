@@ -68,6 +68,32 @@ def follow(request, user_id):
 
     return render(request, 'snsapp/main.html', params)
 
+def mypage(request):
+    #follow数を数える
+    follows = Follow.objects.all()
+    
+    #database上のcreatorが自分の数を数える→フォロー数
+    follow_list = []
+    for follow in follows:
+        if follow.creator == request.user:
+            follow_list.append(1)
+    follow_num = len(follow_list)
+
+    #database上のfollow_targetが自分の数を数える→フォロワー数
+    follower_list = []
+    for follower in follows:
+        if follow.follow_target == request.user:
+            follower_list.append(1)
+    follower_num = len(follower_list)
+
+    params = {
+        'follow_num' : follow_num,
+        'follower_num' : follower_num,
+    }
+
+    return render(request, 'snsapp/mypage.html', params)
+
+
 #Likeするための関数
 # @login_required(login_url='/accounts/login/')
 def like(request, post_id):

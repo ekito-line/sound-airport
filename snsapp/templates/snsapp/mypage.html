@@ -1,0 +1,13 @@
+{% block title %}Mypage{% endblock %}
+
+{% block header %}
+マイページ
+{% endblock %}
+
+{% block body %}
+  {% csrf_token %}
+  <p>follow</p>
+  {{ follow_num }}
+  <p>follower</p>
+  {{ follower_num }}
+{% endblock %}
