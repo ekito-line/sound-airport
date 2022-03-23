@@ -13,6 +13,9 @@ from datetime import date
 def home(request):
     return render(request, 'snsapp/home.html')
 
+def start(request):
+    return render(request, 'snsapp/start.html')
+
 @login_required
 def logout(request):
     django_logout(request)
@@ -37,9 +40,9 @@ def post(request):
         return redirect(to = '/main')
     return render(request, 'snsapp/post.html', params)
 
-#Mainに投稿を表示する
+#homeに投稿を表示する
 # @login_required(login_url='/login/')
-def main(request):
+def home(request):
     user = request.user #これでuserが取れているのか不安。creatorかな
     posts = Post.objects.order_by('created_date')
 
@@ -48,7 +51,7 @@ def main(request):
         'user' : user,
     }
 
-    return render(request, 'snsapp/main.html', params)
+    return render(request, 'snsapp/home.html', params)
 
 #followするための関数
 # @login_required(login_url='/login/')
@@ -173,6 +176,6 @@ def like(request, post_id):
         target_post = target_post
         like = Like(creator = creator, target_post = target_post)
         like.save()
-        return redirect(to = '/main')
+        return redirect(to = '/home')
 
-    return render(request, 'snsapp/main.html', params)
+    return render(request, 'snsapp/home.html', params)
