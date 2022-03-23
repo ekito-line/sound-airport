@@ -9,7 +9,6 @@ body {
   max-width: 390px;
   text-align: center;
   font: 100% "Montserrat", sans-serif;
-  color: #ABBCC9;
   margin: 0;
   background-color: #000;
 }
@@ -27,6 +26,22 @@ body {
 
 h1 {
   color: #ABBCC9;
+}
+
+.section {
+  padding-top: 400px;
+  background-image: url("../images/window.jpg");
+  background-size: 100%;
+  background-position: center;
+}
+.section .container .container-has-text-centered {
+  color: #ABBCC9;
+}
+.section .container .container-has-text-centered .title {
+  font-size: 48px;
+}
+.section .container .container-has-text-centered .subtitle {
+  font-size: 14px;
 }
 
 /* cyrillic-ext */
@@ -76,10 +91,14 @@ h1 {
 }
 .button {
   display: inline-block;
+  /* 角丸 */
   cursor: pointer;
+  /* カーソル形状 */
 }
 
 .button:hover {
   box-shadow: none;
+  /* 影の設定 */
   border-radius: 0;
+  /* 角丸 */
 }
