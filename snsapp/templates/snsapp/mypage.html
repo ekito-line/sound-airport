@@ -1,10 +1,11 @@
+{% extends 'snsapp/base.html' %}
 {% block title %}Mypage{% endblock %}
 
 {% block header %}
 マイページ
 {% endblock %}
 
-{% block body %}
+{% block content %}
   {% csrf_token %}
   <p>username is</p>
   {{ user_name }}

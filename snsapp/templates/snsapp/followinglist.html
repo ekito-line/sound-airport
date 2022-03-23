@@ -1,10 +1,11 @@
+{% extends 'snsapp/base.html' %}
 {% block title %}FollowingList{% endblock %}
 
 {% block header %}
 FollowingList
 {% endblock %}
 
-{% block body %}
+{% block content %}
   {% csrf_token %}
   <p>username is</p>
   {{ user_name }}
