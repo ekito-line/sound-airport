@@ -1,0 +1,18 @@
+{% block title %}Post{% endblock %}
+
+{% block header %}
+投稿する
+{% endblock %}
+
+{% block body %}
+<table class="post_table">
+  <form action="{% url 'post' %}" method="post">
+  {% csrf_token %}
+  <p>Icon</p>
+  {{ form.icon }}
+  <p>Title</p>
+  {{ form.title }}
+  <tr><td><input type="submit" value="投稿" class="btn-submit"></td></tr>
+  </form>
+</table>
+{% endblock %}
