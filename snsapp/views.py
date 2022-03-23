@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Post, User, Follow, Like
 from .forms import PostForm, FollowForm, LikeForm
-from django.core.paginator import Paginator
 
 from django.contrib.auth import logout as django_logout
 from django.conf import settings
@@ -42,7 +41,7 @@ def post(request):
 # @login_required(login_url='/login/')
 def main(request):
     user = request.user #これでuserが取れているのか不安。creatorかな
-    posts = Post.objects.all()
+    posts = Post.objects.order_by('created_date')
 
     params = {
         'data' : posts,
@@ -86,5 +85,3 @@ def like(request, post_id):
         return redirect(to = '/main')
 
     return render(request, 'snsapp/main.html', params)
-
-#paginationに必要なもの
