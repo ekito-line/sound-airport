@@ -1,8 +1,5 @@
-<h1>Home</h1>
-
-{% block title %}トップページ{% endblock %}
 {% block header %}
-<h3></h3>
+<h1>Home</h1>
 {% endblock %}
 
 {% block body %}
@@ -13,13 +10,12 @@
         {% csrf_token %}
         <input type="submit" value="Like" class="btn-submit">
     </form>
-    <p>{{item.created_date}}</p>
+    <p>{{item.created_date|date:"Y m d"}}</p>
     <p>{{item.creator}}</p>
     <audio controls >
         <source src=" {% if item.sound %} {{ item.sound.url }} {% endif %}" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
-    
 </div>
 {% endfor %}
 
