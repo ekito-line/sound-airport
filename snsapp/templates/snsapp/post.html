@@ -1,19 +1,28 @@
 {% extends 'snsapp/base.html' %}
+
+
 {% block title %}Post{% endblock %}
 
 {% block header %}
 投稿する
 {% endblock %}
+<link rel="stylesheet" href="../../static/css/snsapp.css">
 
 {% block content %}
 <table class="post_table">
   <form action="{% url 'post' %}" method="post">
-  {% csrf_token %}
-  <p>Icon</p>
-  {{ form.icon }}
-  <p>Title</p>
-  {{ form.title }}
-  <tr><td><input type="submit" value="投稿" class="btn-submit"></td></tr>
+    {% csrf_token %}
+    <div class="post-icon">
+      <h2>Icon</h2>
+    </div>
+    {{ form.icon }}
+    <div class="post-title">
+      <h2>Title</h2>
+    </div>
+    {{ form.title }}
+    <tr>
+      <td><input type="submit" value="Post" class="btn-submit"></td>
+    </tr>
   </form>
 </table>
 {% endblock %}
