@@ -1,49 +1,4 @@
 @charset "UTF-8";
-html {
-  max-width: 390px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body {
-  max-width: 390px;
-  text-align: center;
-  font: 100% "Montserrat", sans-serif;
-  margin: 0;
-  background-color: #000;
-}
-
-.box {
-  max-width: 390px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-.box .content {
-  background-color: #000;
-  margin: 0 auto;
-}
-
-h1 {
-  color: #ABBCC9;
-}
-
-.section {
-  padding-top: 400px;
-  background-image: url("../images/window.jpg");
-  background-size: 100%;
-  background-position: center;
-}
-.section .container .container-has-text-centered {
-  color: #ABBCC9;
-}
-.section .container .container-has-text-centered .title {
-  font-size: 48px;
-}
-.section .container .container-has-text-centered .subtitle {
-  font-size: 14px;
-}
-
 /* cyrillic-ext */
 @font-face {
   font-family: "Montserrat";
@@ -101,4 +56,78 @@ h1 {
   /* 影の設定 */
   border-radius: 0;
   /* 角丸 */
+}
+
+html {
+  max-width: 390px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  max-width: 390px;
+  font: 100% "Montserrat", sans-serif;
+  margin: 0;
+  background-color: #000;
+}
+
+.box {
+  max-width: 390px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.box .content {
+  background-color: #000;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #ABBCC9;
+  font-size: 48px;
+}
+
+h2 {
+  color: #ABBCC9;
+  font-size: 24px;
+}
+
+p {
+  color: #ABBCC9;
+  font-size: 18px;
+}
+
+.title {
+  padding-top: 400px;
+  background-image: url("../images/window.jpg");
+  background-size: 100%;
+  background-position: center;
+  color: #abbcc9;
+  text-align: center;
+  font-size: 48px;
+  font-size: 14px;
+}
+
+.login_out {
+  text-align: center;
+}
+.login_out .buttons {
+  color: #abbcc9;
+  font-size: 14px;
+}
+
+.show_table input[type=submit] {
+  width: 150px;
+  height: 100px;
+  font-size: 14px;
+  color: #abbcc9;
+}
+
+.post_table .btn-submit {
+  border: 0px;
+  width: 280px;
+  height: 80px;
+  background: url("../images/button.png") left top no-repeat;
+  font-size: 12px;
+  color: #ABBCC9;
 }
