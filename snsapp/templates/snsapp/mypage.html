@@ -1,0 +1,26 @@
+{% extends 'snsapp/base.html' %}
+{% block title %}Mypage{% endblock %}
+
+{% block header %}
+マイページ
+{% endblock %}
+
+{% block content %}
+  {% csrf_token %}
+  <p>username is</p>
+  {{ user_name }}
+  <p>Post</p>
+  {{ post_num }}
+  <p>follow</p>
+  {{ follow_num }}
+  <p>follower</p>
+  {{ follower_num }}
+  {% for item in mypost %}
+    <div class="show_table">
+        <audio controls >
+            <source src=" {% if item.sound %} {{ item.sound.url }} {% endif %}" type="audio/wav">
+        </audio>
+    </div>
+  {% endfor %}
+{% include 'snsapp/navbar.html' %}
+{% endblock %}

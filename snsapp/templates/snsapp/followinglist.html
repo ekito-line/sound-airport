@@ -1,0 +1,40 @@
+{% extends 'snsapp/base.html' %}
+{% block title %}FollowingList{% endblock %}
+
+{% block header %}
+FollowingList
+{% endblock %}
+
+{% block content %}
+  {% csrf_token %}
+  <p>username is</p>
+  {{ user_name }}
+  <p>Post</p>
+  {{ post_num }}
+  <p>follow</p>
+  {{ follow_num }}
+  <p>follower</p>
+  {{ follower_num }}
+
+  <form action="{% url 'followinglist' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" name="button_1" value="follow"> 
+    <input type="submit" name="button_2" value="follower"> 
+  </form>
+
+  {% for item in follow %}
+    <p>{{ item.follow_target }}</p>
+    <form action="{% url 'follow' item.creator.id %}" method="post">
+      {% csrf_token %}
+      <input type="submit" value="フォロー" class="btn-submit">
+    </form>
+  {% endfor %}
+  {% for item in follower %}
+    <p>{{ item.creator }}</p>
+    <form action="{% url 'follow' item.creator.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="フォロー" class="btn-submit">
+      </form>
+  {% endfor %}
+
+{% endblock %}
