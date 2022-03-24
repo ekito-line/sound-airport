@@ -1,0 +1,8 @@
+.post_table .btn-submit{
+    border: 0px;
+    width:280px;
+    height:80px;
+    background: url("../images/button.png") left top no-repeat;
+    color: white;
+    font-size: 12px;
+}

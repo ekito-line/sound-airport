@@ -1,0 +1,30 @@
+$base-font-size: 14px;
+$title-font-size: 48px;
+$main-color: #abbcc9;
+$sub-color: #24568b;
+$background-color: #000;
+$white: #fff;
+$gray: #f4f4f4;
+
+.post_table {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 200px;
+    .btn-submit{
+        text-align: center;
+        border: 0px;
+        width:280px;
+        height:80px;
+        background: url("../images/button.png") left top no-repeat;
+        font-size: 12px;
+        color: #ABBCC9;
+    }
+}
+.post-icon{
+    padding-top: 50px;
+    border-bottom: 1px solid $main-color;
+}
+.post-title{
+    padding-top: 100px;
+    border-bottom: 1px solid $main-color;
+}
