@@ -1,9 +1,9 @@
 <nav id="gnav">
     <ul class="inner">
-        <li><a href="#">ホーム</a></li>
-        <li><a href="#">新規作成</a></li>
-        <li><a href="#">録音</a></li>
-        <li><a href="#">検索</a></li>
-        <li><a href="#">マイページ</a></li>
+        <li><a href="{% url 'home' %}">ホーム</a></li>
+        <li><a href="{% url 'post' %}">新規作成</a></li>
+        <li><a href="{% url 'post' %}">録音</a></li>
+        <li><a href="{% url 'home' %}">検索</a></li>
+        <li><a href="{% url 'mypage' %}">マイページ</a></li>
     </ul>
 </nav>
