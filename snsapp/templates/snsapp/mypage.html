@@ -32,10 +32,12 @@
   {% for item in mypost %}
     <div class="show_table">
       <p>Sound History</p>
+
         <audio controls >
             <source src=" {% if item.sound %} {{ item.sound.url }} {% endif %}" type="audio/wav">
         </audio>
     </div>
   {% endfor %}
 {% include 'snsapp/navbar.html' %}
+
 {% endblock %}

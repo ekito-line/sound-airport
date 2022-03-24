@@ -6,6 +6,8 @@
 {% endblock %}
 <!-- <link rel="stylesheet" href="../../static/css/snsapp.css">
 <script src="https://kit.fontawesome.com/5c072f24bf.js" crossorigin="anonymous"></script> -->
+{% endblock %}
+
 {% block content %}
 {% for item in data %}
 <div class="show_table">
@@ -21,7 +23,6 @@
     </section>
     <audio controls>
         <source src=" {% if item.sound %} {{ item.sound.url }} {% endif %}" type="audio/wav">
-        Your browser does not support the audio element.
     </audio>
 
 </div>
