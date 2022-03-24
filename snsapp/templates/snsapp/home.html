@@ -2,7 +2,10 @@
 
 
 {% block header %}
-<h1>Home</h1>
+<!-- <h1>Home</h1> -->
+{% endblock %}
+<!-- <link rel="stylesheet" href="../../static/css/snsapp.css">
+<script src="https://kit.fontawesome.com/5c072f24bf.js" crossorigin="anonymous"></script> -->
 {% endblock %}
 
 {% block content %}
@@ -11,15 +14,19 @@
     <h2>{{item.title}}</h2>
     <form action="{% url 'like' item.id %}" method="post">
         {% csrf_token %}
-        <input type="submit" value="Like" class="btn-submit">
+        <input type="submit" value="&#xf004">
+        <i class="fa-thin fa-heart"></i>
     </form>
-    <p>{{item.created_date|date:"Y m d"}}</p>
-    <p>{{item.creator}}</p>
-    <audio controls >
+    <section class="credit">
+        <p>{{item.created_date|date:"Y m d"}}</p>
+        <p>{{item.creator}}</p>
+    </section>
+    <audio controls>
         <source src=" {% if item.sound %} {{ item.sound.url }} {% endif %}" type="audio/wav">
-        Your browser does not support the audio element.
     </audio>
+
 </div>
 {% endfor %}
+{% include 'snsapp/navbar.html' %}
 
 {% endblock %}

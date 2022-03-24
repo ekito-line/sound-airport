@@ -1,0 +1,26 @@
+$base-font-size: 14px;
+$main-color: #abbcc9;
+$sub-color: #24568b;
+$background-color: #000;
+$white: #fff;
+$gray: #f4f4f4;
+$font-family: "Montserrat", sans-serif;
+
+.usrname {
+    text-align: center;
+    
+    // color: $main-color;
+    // font-size: 18px;
+}
+.detail {
+    text-align: center;
+    border-bottom: 1px solid $main-color;
+    .usrdetail {
+        line-height: 0;
+        width: 100px;
+        height: 80px;
+        display: inline-block;
+        // color: $main-color;
+        // font-size: 18px;
+    }
+}

@@ -1,0 +1,32 @@
+$base-font-size: 14px;
+$title-font-size: 48px;
+$main-color: #abbcc9;
+$sub-color: #24568b;
+$background-color: #000;
+$white: #fff;
+$gray: #f4f4f4;
+$font-family: "Montserrat", sans-serif;
+
+.show_table {
+    form{
+        padding-right: 350px;
+        height: 30px;
+    }
+    input[type="submit"] {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 300;
+        font-size: 15px;
+        color: $main-color;
+        background-color: $background-color;
+        
+    }
+    .credit{
+        text-align: right;
+    }
+    audio{
+        text-align: center;
+        padding-top: 300px;
+        padding-left: 30px;
+        color: $main-color;
+    }
+}

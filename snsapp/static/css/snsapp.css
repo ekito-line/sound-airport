@@ -1,18 +1,4 @@
 @charset "UTF-8";
-.button {
-  display: inline-block;
-  /* 角丸 */
-  cursor: pointer;
-  /* カーソル形状 */
-}
-
-.button:hover {
-  box-shadow: none;
-  /* 影の設定 */
-  border-radius: 0;
-  /* 角丸 */
-}
-
 /* cyrillic-ext */
 @font-face {
   font-family: "Montserrat";
@@ -58,19 +44,34 @@
   src: url(https://fonts.gstatic.com/s/montserrat/v23/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Hw5aXo.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+.button {
+  display: inline-block;
+  /* 角丸 */
+  cursor: pointer;
+  /* カーソル形状 */
+}
+
+.button:hover {
+  box-shadow: none;
+  /* 影の設定 */
+  border-radius: 0;
+  /* 角丸 */
+}
+
 html {
   max-width: 390px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
 body {
   max-width: 390px;
-  text-align: center;
   font: 100% "Montserrat", sans-serif;
-  color: #ABBCC9;
   margin: 0;
   background-color: #000;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .box {
@@ -86,4 +87,100 @@ body {
 
 h1 {
   color: #ABBCC9;
+  font-size: 48px;
+}
+
+h2 {
+  color: #ABBCC9;
+  font-size: 24px;
+}
+
+h3 {
+  color: #ABBCC9;
+  font-size: 18px;
+}
+
+p {
+  color: #ABBCC9;
+  font-size: 14px;
+}
+
+.title {
+  padding-top: 400px;
+  background-image: url("../images/window.jpg");
+  background-size: 100%;
+  background-position: center;
+  color: #abbcc9;
+  text-align: center;
+  font-size: 48px;
+  font-size: 14px;
+}
+
+.login_out {
+  text-align: center;
+}
+.login_out .buttons {
+  color: #abbcc9;
+  font-size: 14px;
+}
+
+.show_table form {
+  padding-right: 350px;
+  height: 30px;
+}
+.show_table input[type=submit] {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 300;
+  font-size: 15px;
+  color: #abbcc9;
+  background-color: #000;
+}
+.show_table .credit {
+  text-align: right;
+}
+.show_table audio {
+  text-align: center;
+  padding-top: 300px;
+  padding-left: 30px;
+  color: #abbcc9;
+}
+
+.post_table {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 200px;
+}
+.post_table .btn-submit {
+  text-align: center;
+  border: 0px;
+  width: 280px;
+  height: 80px;
+  background: url("../images/button.png") left top no-repeat;
+  font-size: 12px;
+  color: #ABBCC9;
+}
+
+.post-icon {
+  padding-top: 50px;
+  border-bottom: 1px solid #abbcc9;
+}
+
+.post-title {
+  padding-top: 100px;
+  border-bottom: 1px solid #abbcc9;
+}
+
+.usrname {
+  text-align: center;
+}
+
+.detail {
+  text-align: center;
+  border-bottom: 1px solid #abbcc9;
+}
+.detail .usrdetail {
+  line-height: 0;
+  width: 100px;
+  height: 80px;
+  display: inline-block;
 }

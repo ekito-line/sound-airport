@@ -1,0 +1,55 @@
+$base-font-size: 14px;
+$main-color: #ABBCC9;
+$sub-color: #24568B;
+$background-color: #000;
+$white: #FFF;
+$gray: #F4F4F4;  
+$font-family: 'Montserrat', sans-serif;
+
+
+
+html{
+    max-width: 390px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+  max-width: 390px;
+  font: 100% $font-family;
+  margin: 0;
+  background-color: $background-color;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.box{
+    max-width: 390px;
+    text-align : center;
+    margin-left: auto;
+    margin-right: auto;
+    .content{
+        //width: 100%;
+        background-color: $background-color;
+        margin: 0 auto;
+    }
+}
+
+h1{
+    color: $main-color;
+    font-size: 48px;
+}
+
+h2{
+    color: $main-color;
+    font-size: 24px;
+}
+h3{
+    color: $main-color;
+    font-size: 18px; 
+}
+p{
+    color: $main-color;
+    font-size: 14px;
+}
