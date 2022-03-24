@@ -37,7 +37,7 @@ def post(request):
         publish_date = date.today()
         post = Post(title = title, creator = creator, publish_date = publish_date)
         post.save()
-        return redirect(to = '/main')
+        return redirect(to = '/')
     return render(request, 'snsapp/post.html', params)
 
 #homeに投稿を表示する
