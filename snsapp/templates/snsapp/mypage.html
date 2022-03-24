@@ -4,19 +4,34 @@
 {% block header %}
 マイページ
 {% endblock %}
-
+<link rel="stylesheet" href="../../static/css/snsapp.css">
 {% block content %}
   {% csrf_token %}
-  <p>username is</p>
-  {{ user_name }}
-  <p>Post</p>
-  {{ post_num }}
-  <p>follow</p>
-  {{ follow_num }}
-  <p>follower</p>
-  {{ follower_num }}
+  <div class="usrname">
+    <h3>Mike</h3>
+    {{ user_name }}
+  </div>
+  <section class="detail">
+    <div class="usrdetail">
+      <p>Post</p>
+      {{ post_num }}
+    </div> 
+    <div class="usrdetail">
+      <p>follow</p>
+      {{ follow_num }}
+    </div>
+    <div class="usrdetail">
+      <p>follower</p>
+      {{ follower_num }}
+    </div>
+    <p>Hi! Hi! I'm Mark. Nice to meet your sound.</p>
+  </section>
+ 
+  
+  
   {% for item in mypost %}
     <div class="show_table">
+      <p>Sound History</p>
         <audio controls >
             <source src=" {% if item.sound %} {{ item.sound.url }} {% endif %}" type="audio/wav">
         </audio>
