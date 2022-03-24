@@ -1,28 +1,32 @@
 $base-font-size: 14px;
 $title-font-size: 48px;
-$main-color: #ABBCC9;
-$sub-color: #24568B;
+$main-color: #abbcc9;
+$sub-color: #24568b;
 $background-color: #000;
-$white: #FFF;
-$gray: #F4F4F4;  
-$font-family: 'Montserrat', sans-serif;
+$white: #fff;
+$gray: #f4f4f4;
+$font-family: "Montserrat", sans-serif;
 
-
-
-.section {
-    padding-top: 400px;
-    background-image: url("../images/window.jpg");
-    background-size: 100%;
-    background-position: center;
-    .container .container-has-text-centered
-    {
+.show_table {
+    form{
+        padding-right: 350px;
+        height: 30px;
+    }
+    input[type="submit"] {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 300;
+        font-size: 15px;
         color: $main-color;
-        .title{
-            font-size: $title-font-size;
-        }
-        .subtitle{
-            font-size: $base-font-size;
-        }
+        background-color: $background-color;
+        
+    }
+    .credit{
+        text-align: right;
+    }
+    audio{
+        text-align: center;
+        padding-top: 300px;
+        padding-left: 30px;
+        color: $main-color;
     }
 }
-
